@@ -42,7 +42,7 @@ export default function HomePage() {
           </h1>
           <div className="space-x-4">
             <Button variant="outline" onClick={() => handleViewDemo()}>
-              {currentView === 'upload' ? (<Database className="mr-2 h-4 w-4" /> ) : (<Upload className="mr-2 h-4 w-4" />)}
+              {currentView === 'upload' ? (<Database className="mr-2 h-4 w-4" />) : (<Upload className="mr-2 h-4 w-4" />)}
               {currentView === 'upload' ? 'View Demo' : 'Upload package.json'}
             </Button>
             <Button onClick={() => window.open('https://github.com/tronnyg/dependency-visualizer', '_blank')}>
@@ -54,7 +54,7 @@ export default function HomePage() {
 
         {/* Card Centered Vertically and Horizontally */}
         <div className="flex flex-grow items-center justify-center">
-        {currentView === 'upload' ? (
+          {currentView === 'upload' ? (
             <Card className="mb-8 max-w-6xl w-6/12">
               <CardHeader>
                 <CardTitle>Upload package.json</CardTitle>
@@ -78,7 +78,9 @@ export default function HomePage() {
               </CardContent>
             </Card>
           ) : (
-           <DependencyViewPage dependencies={demoDependencies} />
+            <div className="flex justify-center w-[95%] h-[95%] border-4 mb-5">
+              <DependencyViewPage dependencies={demoDependencies} />
+            </div>
           )}
         </div>
 
